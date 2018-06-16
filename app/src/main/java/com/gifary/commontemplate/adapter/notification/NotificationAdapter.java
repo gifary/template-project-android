@@ -44,7 +44,9 @@ public class NotificationAdapter extends ArrayAdapter<Notif> {
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
         layoutParams.setMargins(0, 0, 0, 0);
+
         ll.setLayoutParams(layoutParams);
+        ll.setBackgroundResource(R.color.white);
 
         MyTextView tvCustomerName = (MyTextView) convertView.findViewById(R.id.tv_heading);
         MyTextView tvCustomerAddres  =(MyTextView) convertView.findViewById(R.id.tv_second_line);

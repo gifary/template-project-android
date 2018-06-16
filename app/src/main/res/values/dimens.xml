@@ -25,4 +25,5 @@
     <dimen name="margin_from_top_header">15dp</dimen>
     <dimen name="margin_from_left_right">10dp</dimen>
     <dimen name="margin_from_top_text">5dp</dimen>
+    <dimen name="radius">10dp</dimen>
 </resources>

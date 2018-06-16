@@ -7,9 +7,13 @@
 
     <LinearLayout
         android:id="@+id/ll_two_line"
-        android:padding="@dimen/padding_from_border"
-        android:layout_marginBottom="@dimen/margin_from_top_text"
+        android:paddingTop="@dimen/padding_from_border"
+        android:paddingLeft="@dimen/padding_from_border"
+        android:paddingRight="@dimen/padding_from_border"
+        android:paddingBottom="@dimen/padding_from_header"
+
         android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_from_top_text"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

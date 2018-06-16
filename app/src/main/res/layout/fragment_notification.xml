@@ -5,8 +5,7 @@
     tools:context="com.gifary.commontemplate.app.notification.NotificationFragment">
 
     <ListView
-        android:layout_marginTop="@dimen/margin_from_top_text"
-        android:layout_marginBottom="@dimen/margin_from_top_text"
+        android:layout_margin="@dimen/margin_from_top_text"
         android:divider="@color/iron"
         android:dividerHeight="1dp"
         android:id="@+id/lv_notification"

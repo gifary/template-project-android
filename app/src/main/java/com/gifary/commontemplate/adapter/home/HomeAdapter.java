@@ -37,13 +37,16 @@ public class HomeAdapter extends ArrayAdapter<Customer> {
             convertView = LayoutInflater.from(context).inflate(R.layout.lv_two_line,parent,false);
         }
         LinearLayout ll = (LinearLayout) convertView.findViewById(R.id.ll_two_line);
-        ll.setOrientation(LinearLayout.VERTICAL);
+        /*ll.setOrientation(LinearLayout.VERTICAL);
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        layoutParams.setMargins(15, 0, 15, 10);
-        ll.setLayoutParams(layoutParams);
+        layoutParams.setMargins(10, 10, 10, 10);
+
+        ll.setPadding(20,20,20,10);
+        ll.setLayoutParams(layoutParams);*/
+        ll.setBackgroundResource(R.drawable.bg_white_small_radius);
 
         MyTextView tvCustomerName = (MyTextView) convertView.findViewById(R.id.tv_heading);
         MyTextView tvCustomerAddres  =(MyTextView) convertView.findViewById(R.id.tv_second_line);
