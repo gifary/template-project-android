@@ -1,47 +1,20 @@
 package com.gifary.commontemplate;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
-
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.AsyncTask;
-
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.gifary.commontemplate.app.user.ForgotActivityActivity;
+import com.gifary.commontemplate.app.MainActivity;
+import com.gifary.commontemplate.app.user.ForgotActivity;
 import com.gifary.commontemplate.app.user.RegisterActivity;
-import com.google.firebase.FirebaseApp;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.gifary.commontemplate.configuration.EnableModule;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  * A login screen that offers login via email/password.
@@ -72,6 +45,10 @@ public class LoginActivity extends BaseActivity  {
             }
         });
 
+        if(!EnableModule.REGISTER){
+            _signupLink.setVisibility(View.GONE);
+        }
+
         _signupLink.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -84,10 +61,13 @@ public class LoginActivity extends BaseActivity  {
             }
         });
 
+        if(!EnableModule.RESET_PASSWORD){
+            _forgotPassword.setVisibility(View.GONE);
+        }
         _forgotPassword.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                initIntent(ForgotActivityActivity.class);
+                initIntent(ForgotActivity.class);
                 nextActivity(false);
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
             }
@@ -103,7 +83,7 @@ public class LoginActivity extends BaseActivity  {
 
         _loginButton.setEnabled(false);
 
-        showProgressDialog("Connecting","Try to loggin");
+        initProgressDialog("Connecting","Try to loggin");
         showProgress();
 
         String email = _emailText.getText().toString();
@@ -132,6 +112,9 @@ public class LoginActivity extends BaseActivity  {
     public void onLoginSuccess() {
         showInfoToast("Success login");
         _loginButton.setEnabled(true);
+        Intent intent = new Intent(context, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     public void onLoginFailed() {

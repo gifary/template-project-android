@@ -1,6 +1,5 @@
 package com.gifary.commontemplate.app.user;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,27 +11,27 @@ import com.gifary.commontemplate.LoginActivity;
 import com.gifary.commontemplate.R;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
-public class ForgotActivityActivity extends BaseActivity {
+public class ForgotActivity extends BaseActivity {
 
-    @BindView(R.id.input_email)
-    EditText _inputEmail;
+    @BindView(R.id.et_email) EditText etEmail;
 
-    @BindView(R.id.link_sigin)
-    TextView _linkSigin;
+    @BindView(R.id.link_login) TextView _linkLogin;
 
-    @BindView(R.id.btn_forgot)
-    Button _btnForgot;
+    @BindView(R.id.btn_forgot) Button _btnForgot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_activity);
+
+        ButterKnife.bind(this);
+
         context =this;
-        activity = ForgotActivityActivity.this;
+        activity = ForgotActivity.this;
 
-
-        _linkSigin.setOnClickListener(new View.OnClickListener() {
+        _linkLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 initIntent(LoginActivity.class);
@@ -44,7 +43,7 @@ public class ForgotActivityActivity extends BaseActivity {
         _btnForgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showProgressDialog("Connection","Reset password");
+                initProgressDialog("Connection","Reset password");
                 showProgress();
                 checkEmail();
             }
@@ -53,6 +52,7 @@ public class ForgotActivityActivity extends BaseActivity {
 
     private void checkEmail(){
         if(!validate()){
+            hiddenProgress();
             return;
         }
 
@@ -69,13 +69,13 @@ public class ForgotActivityActivity extends BaseActivity {
 
     private boolean validate(){
         boolean valid =true;
-        String email = _inputEmail.getText().toString();
+        String email = etEmail.getText().toString();
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _inputEmail.setError("enter a valid email address");
+            etEmail.setError("enter a valid email address");
             valid = false;
         } else {
-            _inputEmail.setError(null);
+            etEmail.setError(null);
         }
 
         return valid;

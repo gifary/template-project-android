@@ -1,4 +1,4 @@
-package com.gifary.commontemplate.model;
+package com.gifary.commontemplate.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

@@ -1,0 +1,164 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.gifary.commontemplate.app.account.AccountFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:background="@color/iron"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile_picture"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:foregroundGravity="center"
+                android:src="@mipmap/ic_launcher_round"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <com.gifary.commontemplate.customlayout.MyTextView
+                android:text="NAMA USER"
+                android:layout_toRightOf="@id/iv_profile_picture"
+                android:layout_marginTop="120dp"
+                android:layout_marginLeft="20dp"
+                app:fontName="Roboto_Bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/ll_edit_profile"
+            android:padding="@dimen/padding_from_border"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/margin_from_top_header"
+            android:layout_marginLeft="@dimen/margin_from_left_right"
+            android:layout_marginRight="@dimen/margin_from_left_right"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.gifary.commontemplate.customlayout.MyTextView
+                    app:fontName="Roboto"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:text="Ubah Profile"
+                    android:textSize="@dimen/sub_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_gravity="end"
+                    android:layout_weight="2"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_reset_password"
+            android:padding="@dimen/padding_from_border"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/margin_from_top_text"
+            android:layout_marginLeft="@dimen/margin_from_left_right"
+            android:layout_marginRight="@dimen/margin_from_left_right"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.gifary.commontemplate.customlayout.MyTextView
+                    app:fontName="Roboto"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:text="Ubah Password"
+                    android:textSize="@dimen/sub_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_gravity="end"
+                    android:layout_weight="2"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_sync_data"
+            android:padding="@dimen/padding_from_border"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/margin_from_top_text"
+            android:layout_marginLeft="@dimen/margin_from_left_right"
+            android:layout_marginRight="@dimen/margin_from_left_right"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.gifary.commontemplate.customlayout.MyTextView
+                    app:fontName="Roboto"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:text="Sikronkan Data"
+                    android:textSize="@dimen/sub_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_gravity="end"
+                    android:layout_weight="2"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_logout"
+            android:padding="@dimen/padding_from_border"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/margin_from_top_text"
+            android:layout_marginLeft="@dimen/margin_from_left_right"
+            android:layout_marginRight="@dimen/margin_from_left_right"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.gifary.commontemplate.customlayout.MyTextView
+                    app:fontName="Roboto"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:text="Keluar"
+                    android:textSize="@dimen/sub_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

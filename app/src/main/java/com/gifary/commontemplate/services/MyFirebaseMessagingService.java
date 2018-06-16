@@ -24,7 +24,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         if (remoteMessage.getData().size() > 0) {
             Map<String, String> data = remoteMessage.getData();
-            /*Notification notification =new Notification(getBaseContext());
+            /*Notif notification =new Notif(getBaseContext());
             notification.showSimpleNotification(data.get("title"),data.get("text"));*/
         }
 

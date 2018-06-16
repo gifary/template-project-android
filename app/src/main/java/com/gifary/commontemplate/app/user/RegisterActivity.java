@@ -1,6 +1,5 @@
 package com.gifary.commontemplate.app.user;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -68,7 +67,7 @@ public class RegisterActivity extends BaseActivity {
         String mobile = _mobileText.getText().toString();
         String password = _passwordText.getText().toString();
         String reEnterPassword = _reEnterPasswordText.getText().toString();
-        showProgressDialog("Connecting","Creating account");
+        initProgressDialog("Connecting","Creating account");
         showProgress();
         // TODO: Implement your own signup logic here.
 
